@@ -1,0 +1,15 @@
+{
+    "character": "Cain",
+    "abilities": [
+        {
+            "name": "Money Equals Power",
+            "unlocked": false,
+            "description": "richer the stronger"
+        },
+        {
+            "name": "Lucky Foot",
+            "unlocked": false,
+            "description": "you are lucky"
+        }
+    ]
+}

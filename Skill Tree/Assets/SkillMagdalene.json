@@ -1,0 +1,15 @@
+{
+    "character": "Magdalene",
+    "abilities": [
+        {
+            "name": "The Waffer",
+            "unlocked": false,
+            "description": "Tank Better"
+        },
+        {
+            "name": "Revelation",
+            "unlocked": false,
+            "description": "Feel enligthened"
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "character": "Judas",
+    "abilities": [
+        {
+            "name": "Brimstone",
+            "unlocked": false,
+            "description": "shoot Blood",
+            "path": "Sprites/Judas/Brimstone",
+            "position": {
+                "x": 15.0,
+                "y": 10.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "Damocle",
+            "unlocked": false,
+            "description": "The choice has been made",
+            "path": "Sprites/Judas/Damocles",
+            "position": {
+                "x": -15.0,
+                "y": 10.0,
+                "z": 0.0
+            }
+        }
+    ]
+}

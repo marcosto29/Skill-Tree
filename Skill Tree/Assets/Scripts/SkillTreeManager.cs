@@ -4,20 +4,31 @@ using UnityEngine;
 
 public class SkillTreeManager : MonoBehaviour
 {
-    public GameObject canvas;
     public GameObject skillPrefab;
+    public Dictionary<string, Sprite> sprites;
+    public CharacterSkillData character;
+    private void Awake()
+    {
+        character = JsonManager.JsonReader("Judas");
+        sprites = new();
+        foreach(Skill s in character.abilities)//preload the sprites
+        {
+            sprites.Add(s.name, Resources.Load<Sprite>("Sprites/" + character.name + "/" + s.name));
+        }
+        sprites.Add("Background", Resources.Load<Sprite>("Sprites/" + character.name + "/Background"));
+    }
     void Start()
     {
-        SkillTreeData J = JsonManager.ReadJson("Judas");
-
-        foreach(Skill A in J.abilities)
+        foreach(Skill s in character.abilities)
         {
-            GameObject bubble = Instantiate(skillPrefab, canvas.transform);
-            bubble.transform.name = A.name;
+            GameObject bubble = Instantiate(skillPrefab, transform);
+            bubble.transform.name = s.name;
 
-            SkillBubble skill = bubble.GetComponent<SkillBubble>();
+            SkillBubble skill = bubble.GetComponentInChildren<SkillBubble>();
+            skill.Skill = s;
 
-            skill.Skill = A;
+            skill.UiSprite = sprites[s.name];
+            skill.Backgorund = sprites["Background"];
         }
     }
 

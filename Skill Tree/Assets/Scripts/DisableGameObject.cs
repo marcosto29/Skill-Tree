@@ -4,9 +4,9 @@ using UnityEngine;
 using TMPro;
 
 public class DisableGameObject : MonoBehaviour
-{
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) this.gameObject.SetActive(false);
-    }
+{ 
+    //private void Update()
+    //{
+    //    if (Input.GetMouseButtonDown(0)) this.gameObject.SetActive(false);
+    //}
 }

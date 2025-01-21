@@ -1,27 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkillTreeManager : MonoBehaviour
 {
-    public GameObject skillPrefab;
-    public Dictionary<string, Sprite> sprites;
-    public CharacterSkillData character;
-    private void Awake()
+    public static Dictionary<string, Sprite> sprites;
+    public static CharacterSkillData characterSkills;
+    public static string characterName;
+
+
+    public static void CreateTree(GameObject skillPrefab)
     {
-        character = JsonManager.JsonReader("Judas");
+        characterSkills = JsonManager.JsonReader<CharacterSkillData>("Skills/" + "Skill" + characterName);
         sprites = new();
-        foreach(Skill s in character.abilities)//preload the sprites
+        foreach (Skill s in characterSkills.abilities)//preload the sprites
         {
-            sprites.Add(s.name, Resources.Load<Sprite>("Sprites/" + character.name + "/" + s.name));
+            sprites.Add(s.name, Resources.Load<Sprite>("Sprites/" + characterName + "/" + s.name));
         }
-        sprites.Add("Background", Resources.Load<Sprite>("Sprites/" + character.name + "/Background"));
-    }
-    void Start()
-    {
-        foreach(Skill s in character.abilities)
+        sprites.Add("Background", Resources.Load<Sprite>("Sprites/Background"));
+
+        foreach (Skill s in characterSkills.abilities)
         {
-            GameObject bubble = Instantiate(skillPrefab, transform);
+            GameObject bubble = Instantiate(skillPrefab);
             bubble.transform.name = s.name;
 
             SkillBubble skill = bubble.GetComponentInChildren<SkillBubble>();
@@ -30,11 +31,5 @@ public class SkillTreeManager : MonoBehaviour
             skill.UiSprite = sprites[s.name];
             skill.Backgorund = sprites["Background"];
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

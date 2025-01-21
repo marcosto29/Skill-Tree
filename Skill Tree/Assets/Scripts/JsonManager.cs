@@ -1,33 +1,32 @@
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 public static class JsonManager
 {
-    public static void JsonWriter(CharacterSkillData A)
+    public static void JsonWriter(CharacterSkillData A, string name)
     {
         var json = JsonConvert.SerializeObject(A);
-        File.WriteAllText(Application.dataPath + "/Skill" + A.name + ".json", json);
-    }
-    
-    public static CharacterSkillData JsonReader(string character)
-    {
-        var json = File.ReadAllText(Application.dataPath + "/Skill" + character + ".json");
-        return JsonConvert.DeserializeObject<CharacterSkillData>(json);
+        File.WriteAllText(Application.dataPath + "/Skill" + name + ".json", json);
     }
 
-    public static void Unlock(UnlockSkill uSkill)
+    public static T JsonReader<T>(string filePath)
     {
-        string json = File.ReadAllText(Application.dataPath + "/Skill" + uSkill.GetComponentInParent<SkillTreeManager>().character.name + ".json");
+        var json = File.ReadAllText(Application.dataPath + "/JSON/" + filePath + ".json");
+        return JsonConvert.DeserializeObject<T>(json);
+    }
+    public static void Unlock(string uSkill)
+    {
+        string json = File.ReadAllText(Application.dataPath + "/JSON/Skills/Skill" + SkillTreeManager.characterName + ".json");
         JObject jsonObject = JObject.Parse(json);
+
 
         JArray abilities = (JArray)jsonObject["abilities"];
 
         foreach (JObject s in abilities)
         {
-            if (s["name"].ToString() == uSkill.GetComponentInParent<SkillBubble>().Skill.name)
+            if (s["name"].ToString() == uSkill)
             {
                 s["unlocked"] = true;
                 break;
@@ -36,7 +35,6 @@ public static class JsonManager
 
         string updatedJson = jsonObject.ToString();
 
-        File.WriteAllText(Application.dataPath + "/Skill" + uSkill.GetComponentInParent<SkillTreeManager>().character.name + ".json", updatedJson);
-        Debug.Log("Done");
+        File.WriteAllText(Application.dataPath + "/JSON/Skills/Skill" + SkillTreeManager.characterName + ".json", updatedJson);
     }
 }

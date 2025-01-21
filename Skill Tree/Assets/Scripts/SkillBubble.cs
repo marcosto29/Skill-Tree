@@ -6,17 +6,17 @@ using TMPro;
 
 public class SkillBubble : MonoBehaviour
 {
-    GameObject descriptionBox;
+    GameObject displayedSkill;
     Button display;
     public Sprite Backgorund
     {
         get
         {
-            return descriptionBox.GetComponentInChildren<Image>().sprite;
+            return displayedSkill.GetComponentInChildren<Image>().sprite;
         }
         set
         {
-            Image background = descriptionBox.GetComponentInChildren<Image>();
+            Image background = displayedSkill.GetComponentInChildren<Image>();
             background.sprite = value;
             background.SetNativeSize();
         }
@@ -44,14 +44,16 @@ public class SkillBubble : MonoBehaviour
         set
         {
             transform.position = value.position;
-            descriptionBox.GetComponentInChildren<TextMeshProUGUI>().text = value.description;
+            displayedSkill.transform.position = value.position;
+            displayedSkill.GetComponentInChildren<TextMeshProUGUI>().text = value.description;
+            displayedSkill.GetComponentInChildren<UnlockSkill>().skillName = value.name;
             skill = value;
         }
     }
     private void Awake()
     {
-        descriptionBox = transform.GetChild(0).gameObject;
-        descriptionBox.SetActive(false);
+        displayedSkill = transform.GetChild(0).gameObject;
+        displayedSkill.SetActive(false);
 
         display = GetComponent<Button>();
         uiSprite = GetComponent<Image>();
@@ -60,6 +62,6 @@ public class SkillBubble : MonoBehaviour
 
     private void DisplaySkill()
     {
-        descriptionBox.SetActive(true);
+        displayedSkill.SetActive(true);
     }
 }

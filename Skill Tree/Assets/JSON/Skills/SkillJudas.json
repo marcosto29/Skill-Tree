@@ -2,7 +2,7 @@
   "abilities": [
     {
       "name": "Brimstone",
-      "unlocked": true,
+      "unlocked": false,
       "description": "shoot Blood",
       "position": {
         "x": 15.0,
@@ -12,7 +12,7 @@
     },
     {
       "name": "Damocles",
-      "unlocked": true,
+      "unlocked": false,
       "description": "The choice has been made",
       "position": {
         "x": -15.0,

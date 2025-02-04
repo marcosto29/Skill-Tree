@@ -1,16 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.EventSystems;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Linq;
 
 public class DisableGameObject : MonoBehaviour
 {
-    private void Update()
+    public GraphicRaycaster raycaster;
+    EventSystem eventSystem;
+
+    void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)) // Detect left mouse click
         {
-            RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-            if (rayHit.collider == null) gameObject.SetActive(false);
+            DetectUIElement();
         }
+    }
+
+    void DetectUIElement()
+    {
+        PointerEventData pointerData = new (eventSystem);
+        pointerData.position = Input.mousePosition;
+
+        List<RaycastResult> results = new();
+        raycaster.Raycast(pointerData, results);
+
+        if (!results.Any(result => result.gameObject == transform.GetChild(0).gameObject))
+            gameObject.SetActive(false);
     }
 }

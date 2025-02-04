@@ -1,6 +1,6 @@
 {
-    "Judas": true,
-    "Isaac": true,
-    "Cain": true,
+    "Painter": true,//Display order
+    "Judas": false,
+    "Isaac": false,
     "Magdalene": false
 }

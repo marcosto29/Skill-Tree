@@ -6,7 +6,7 @@ using TMPro;
 
 public class SkillBubble : MonoBehaviour
 {
-    GameObject displayedSkill;
+    public GameObject displayedSkill;
     Button display;
     public Sprite Backgorund
     {
@@ -43,10 +43,8 @@ public class SkillBubble : MonoBehaviour
         }
         set
         {
-            transform.position = value.position;
-            displayedSkill.transform.position = value.position;
             displayedSkill.GetComponentInChildren<TextMeshProUGUI>().text = value.description;
-            displayedSkill.GetComponentInChildren<UnlockSkill>().skillName = value.name;
+            
             skill = value;
         }
     }
@@ -57,6 +55,7 @@ public class SkillBubble : MonoBehaviour
 
         display = GetComponent<Button>();
         uiSprite = GetComponent<Image>();
+
         display.onClick.AddListener(DisplaySkill);
     }
 

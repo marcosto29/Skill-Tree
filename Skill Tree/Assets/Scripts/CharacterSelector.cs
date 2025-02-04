@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterSelector : MonoBehaviour
 {
     public string character;
-    public GameObject skillPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +15,7 @@ public class CharacterSelector : MonoBehaviour
     private void SelectCharacter()
     {
         SkillTreeManager.characterName = character;
-        SkillTreeManager.CreateTree(skillPrefab);
+        SkillTreeManager.CreateTree(GetComponentInParent<CharacterSelect>().skillPrefab);
         Destroy(transform.root.gameObject);
     }
 }

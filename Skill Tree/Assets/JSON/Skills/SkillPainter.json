@@ -1,0 +1,14 @@
+{
+  "abilities": [
+    {
+      "name": "RGB Buckets",
+      "unlocked": false,
+      "description": "Wet your brush on a pallete of different colors to add an effect",
+      "position": {
+        "x": 15.0,
+        "y": 10.0,
+        "z": 0.0
+      }
+    }
+  ]
+}

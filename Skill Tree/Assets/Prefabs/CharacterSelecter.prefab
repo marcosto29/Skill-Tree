@@ -139,8 +139,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.607727, y: -5.6102905}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7893567698813159180
 CanvasRenderer:
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: 
-  skillPrefab: {fileID: 3098449973742282865, guid: 9740d622a2e143540ba14bcad54f0108, type: 3}
+  tree: {fileID: 0}
 --- !u!1 &7893567699139441199
 GameObject:
   m_ObjectHideFlags: 0

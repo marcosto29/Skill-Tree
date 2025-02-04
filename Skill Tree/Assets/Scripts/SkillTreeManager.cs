@@ -9,7 +9,6 @@ public class SkillTreeManager : MonoBehaviour
     public static CharacterSkillData characterSkills;
     public static string characterName;
 
-
     public static void CreateTree(GameObject skillPrefab)
     {
         characterSkills = JsonManager.JsonReader<CharacterSkillData>("Skills/" + "Skill" + characterName);
@@ -18,7 +17,8 @@ public class SkillTreeManager : MonoBehaviour
         {
             sprites.Add(s.name, Resources.Load<Sprite>("Sprites/" + characterName + "/" + s.name));
         }
-        sprites.Add("Background", Resources.Load<Sprite>("Sprites/Background"));
+        sprites.Add("Background", Resources.Load<Sprite>("Sprites/" + characterName + "/Background"));
+        sprites.Add("Button", Resources.Load<Sprite>("Sprites/" + characterName + "/Button"));
 
         foreach (Skill s in characterSkills.abilities)
         {
@@ -27,9 +27,10 @@ public class SkillTreeManager : MonoBehaviour
 
             SkillBubble skill = bubble.GetComponentInChildren<SkillBubble>();
             skill.Skill = s;
-
-            skill.UiSprite = sprites[s.name];
             skill.Backgorund = sprites["Background"];
+            skill.UiSprite = sprites[s.name];
+            bubble.GetComponentInChildren<SkillBubble>().displayedSkill.GetComponentInChildren<Button>().image.sprite = sprites["Button"];
+            bubble.GetComponentInChildren<SkillBubble>().displayedSkill.GetComponentInChildren<Button>().image.SetNativeSize();
         }
     }
 }

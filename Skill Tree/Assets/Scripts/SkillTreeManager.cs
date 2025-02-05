@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkillTreeManager : MonoBehaviour
+public class SkillTreeManager : MonoBehaviour //There is only going to be one Tree Manager on the scene
 {
     public static Dictionary<string, Sprite> sprites;
     public static CharacterSkillData characterSkills;
@@ -13,24 +13,14 @@ public class SkillTreeManager : MonoBehaviour
     {
         characterSkills = JsonManager.JsonReader<CharacterSkillData>("Skills/" + "Skill" + characterName);
         sprites = new();
-        foreach (Skill s in characterSkills.abilities)//preload the sprites
-        {
-            sprites.Add(s.name, Resources.Load<Sprite>("Sprites/" + characterName + "/" + s.name));
-        }
         sprites.Add("Background", Resources.Load<Sprite>("Sprites/" + characterName + "/Background"));
         sprites.Add("Button", Resources.Load<Sprite>("Sprites/" + characterName + "/Button"));
 
         foreach (Skill s in characterSkills.abilities)
         {
             GameObject bubble = Instantiate(skillPrefab);
+            bubble.GetComponentInChildren<SkillBubbleManager>().Skill = s;
             bubble.transform.name = s.name;
-
-            SkillBubble skill = bubble.GetComponentInChildren<SkillBubble>();
-            skill.Skill = s;
-            skill.Backgorund = sprites["Background"];
-            skill.UiSprite = sprites[s.name];
-            bubble.GetComponentInChildren<SkillBubble>().displayedSkill.GetComponentInChildren<Button>().image.sprite = sprites["Button"];
-            bubble.GetComponentInChildren<SkillBubble>().displayedSkill.GetComponentInChildren<Button>().image.SetNativeSize();
         }
     }
 }

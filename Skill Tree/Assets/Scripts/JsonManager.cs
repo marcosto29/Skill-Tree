@@ -16,9 +16,9 @@ public static class JsonManager
         var json = File.ReadAllText(Application.dataPath + "/JSON/" + filePath + ".json");
         return JsonConvert.DeserializeObject<T>(json);
     }
-    public static void Unlock(string uSkill)
+    public static void Unlock(string character, string skill)
     {
-        string json = File.ReadAllText(Application.dataPath + "/JSON/Skills/Skill" + SkillTreeManager.characterName + ".json");
+        string json = File.ReadAllText(Application.dataPath + "/JSON/Skills/Skill" + character + ".json");
         JObject jsonObject = JObject.Parse(json);
 
 
@@ -26,7 +26,7 @@ public static class JsonManager
 
         foreach (JObject s in abilities)
         {
-            if (s["name"].ToString() == uSkill)
+            if (s["name"].ToString() == skill)
             {
                 s["unlocked"] = true;
                 break;
@@ -35,6 +35,6 @@ public static class JsonManager
 
         string updatedJson = jsonObject.ToString();
 
-        File.WriteAllText(Application.dataPath + "/JSON/Skills/Skill" + SkillTreeManager.characterName + ".json", updatedJson);
+        File.WriteAllText(Application.dataPath + "/JSON/Skills/Skill" + character + ".json", updatedJson);
     }
 }

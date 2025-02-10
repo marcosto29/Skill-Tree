@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f88a6e8bea01974fbe548669ca9d909
+guid: 94e8db24ff1f94646b365ecc578cf494
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -96,7 +96,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638748026511410073
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -120,7 +120,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Painter
+  - name: Eraser
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -129,9 +129,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 51
-      height: 40
-    spriteID: c9c4593a9ea52ca44b9c71325220edc8
+      width: 46
+      height: 38
+    spriteID: 847922aad7a071048b30d262c5a125ef
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,21 +143,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1908596581
-    name: Painter
+    guid: -133097966
+    name: Eraser
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Painter
+    - name: Eraser
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 51
-        height: 40
-      spriteId: c9c4593a9ea52ca44b9c71325220edc8
+        width: 46
+        height: 38
+      spriteId: 847922aad7a071048b30d262c5a125ef
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -172,41 +172,8 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 51, y: 40}
+  canvasSize: {x: 46, y: 38}
   previousTextureSize: {x: 64, y: 64}

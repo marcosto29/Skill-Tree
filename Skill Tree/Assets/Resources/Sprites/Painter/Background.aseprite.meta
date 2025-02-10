@@ -34,7 +34,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 50
+    spritePixelsToUnits: 100
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -96,7 +96,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638742762935859090
+  platformSettingsDirtyTick: 638748026615757648
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -120,7 +120,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Background2
+  - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -129,9 +129,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 200
-      height: 200
-    spriteID: de6ec7a6fbe973b4ca1c4e7cdd052f34
+      width: 100
+      height: 100
+    spriteID: 1c68abe426189dd40aa3df68ab77f04d
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,8 +143,8 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1498723572
-    name: Background2
+    guid: 332801758
+    name: Background
     layerFlags: 0
     layerType: 0
     blendMode: 0
@@ -155,9 +155,9 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 200
-        height: 200
-      spriteId: de6ec7a6fbe973b4ca1c4e7cdd052f34
+        width: 100
+        height: 100
+      spriteId: 1c68abe426189dd40aa3df68ab77f04d
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -208,5 +208,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 200, y: 200}
-  previousTextureSize: {x: 256, y: 256}
+  canvasSize: {x: 100, y: 100}
+  previousTextureSize: {x: 128, y: 128}

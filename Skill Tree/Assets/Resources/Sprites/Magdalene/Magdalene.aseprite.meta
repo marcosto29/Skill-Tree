@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f88a6e8bea01974fbe548669ca9d909
+guid: d1a7dc7f73a656848bb0a39a36956df8
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -96,7 +96,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638748026511410073
+  platformSettingsDirtyTick: 0
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -120,7 +120,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Painter
+  - name: Magdalene
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -131,7 +131,7 @@ ScriptedImporter:
       y: 4
       width: 51
       height: 40
-    spriteID: c9c4593a9ea52ca44b9c71325220edc8
+    spriteID: 47273066a42b2ca4191c9c4389e8f108
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,13 +143,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1908596581
-    name: Painter
+    guid: -276055976
+    name: Magdalene
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Painter
+    - name: Magdalene
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -157,46 +157,13 @@ ScriptedImporter:
         y: 0
         width: 51
         height: 40
-      spriteId: c9c4593a9ea52ca44b9c71325220edc8
+      spriteId: 47273066a42b2ca4191c9c4389e8f108
     linkedCells: []
     parentIndex: -1
   platformSettings:
   - name: Default
     overridden: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: DefaultTexturePlatform
-    overridden: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Standalone
-    overridden: 0
-    maxTextureSize: 16384
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    androidETC2FallbackOverride: 0
-  - name: Server
-    overridden: 0
-    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0

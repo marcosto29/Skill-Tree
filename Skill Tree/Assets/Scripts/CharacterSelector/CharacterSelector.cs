@@ -14,8 +14,9 @@ public class CharacterSelector : MonoBehaviour
     
     private void SelectCharacter()
     {
-        SkillTreeManager.characterName = character;
-        SkillTreeManager.CreateTree(GetComponentInParent<CharacterSelect>().skillPrefab);
+        SkillTreeManager tree = GetComponentInParent<CharacterSelect>().tree;
+        tree.characterName = character;
+        tree.CreateTree(GetComponentInParent<CharacterSelect>().skillPrefab);
         Destroy(transform.root.gameObject);
     }
 }

@@ -1,6 +1,8 @@
 {
-    "Painter": true,//Display order
-    "Judas": false,
-    "Isaac": false,
-    "Magdalene": false
+    //If the characters are unlocked (true) their icons will appear on screen and can be interacted with
+    "Painter": true, //Display order
+    "Judas": true,
+    "Isaac": true,
+    "Magdalene": true,
+    "Forgotten" :  false
 }

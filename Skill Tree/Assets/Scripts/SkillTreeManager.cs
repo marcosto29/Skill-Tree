@@ -5,22 +5,26 @@ using UnityEngine.UI;
 
 public class SkillTreeManager : MonoBehaviour //There is only going to be one Tree Manager on the scene
 {
-    public static Dictionary<string, Sprite> sprites;
-    public static CharacterSkillData characterSkills;
-    public static string characterName;
+    public Dictionary<string, Sprite> sprites;
+    public CharacterSkillData characterSkills;
+    public string characterName;
 
-    public static void CreateTree(GameObject skillPrefab)
+    public void CreateTree(GameObject skillPrefab)
     {
         characterSkills = JsonManager.JsonReader<CharacterSkillData>("Skills/" + "Skill" + characterName);
         sprites = new();
         sprites.Add("Background", Resources.Load<Sprite>("Sprites/" + characterName + "/Background"));
         sprites.Add("Button", Resources.Load<Sprite>("Sprites/" + characterName + "/Button"));
-
+        int i = 0;
+        int j = 0;
+        i += characterSkills.abilities.Length;
         foreach (Skill s in characterSkills.abilities)
         {
-            GameObject bubble = Instantiate(skillPrefab);
-            bubble.GetComponentInChildren<SkillBubbleManager>().Skill = s;
+            GameObject bubble = Instantiate(skillPrefab, transform);
+            bubble.transform.position = new Vector3(((float)1 / i * 210 * j) + ((float)1 / i * 210 / 2) - 100, 0, 0);
             bubble.transform.name = s.name;
+            bubble.GetComponentInChildren<SkillBubbleManager>().Skill = s;
+            j++;
         }
     }
 }

@@ -21,20 +21,19 @@ public class SkillBubbleManager : MonoBehaviour
             skill = value;
 
             displayedSkill.GetComponentInChildren<TextMeshProUGUI>().text = value.description;//setting up the description text
-            display.image.sprite = Resources.Load<Sprite>("Sprites/" + SkillTreeManager.characterName + "/" + value.name);
+            display.image.sprite = Resources.Load<Sprite>("Sprites/" + GetComponentInParent<SkillTreeManager>().characterName + "/" + value.name);
             display.image.SetNativeSize();
         }
     }
 
-
     private void Awake()
     {
         Image displayedImage = displayedSkill.GetComponentInChildren<Image>();//setting up the description background
-        displayedImage.sprite = SkillTreeManager.sprites["Background"];
+        displayedImage.sprite = GetComponentInParent<SkillTreeManager>().sprites["Background"];
         displayedImage.SetNativeSize();
 
         Image buttonImage = displayedSkill.GetComponentInChildren<Button>().image;//setting up the unlocked button image
-        buttonImage.sprite = SkillTreeManager.sprites["Button"];
+        buttonImage.sprite = GetComponentInParent<SkillTreeManager>().sprites["Button"];
         buttonImage.SetNativeSize();
 
         displayedSkill.SetActive(false);//deactivating the description

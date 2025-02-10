@@ -13,7 +13,7 @@ public class UnlockSkill : MonoBehaviour
         if (bubbleManager.Skill.unlocked == true) gameObject.SetActive(false);
         unlock = GetComponent<Button>();
         unlock.onClick.AddListener(() => {
-            JsonManager.Unlock(bubbleManager.Skill.name, SkillTreeManager.characterName);
+            JsonManager.Unlock(bubbleManager.Skill.name, GetComponentInParent<SkillTreeManager>().characterName);
             gameObject.SetActive(false);
         });
     }

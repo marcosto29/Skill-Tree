@@ -21,10 +21,18 @@ public class SkillTreeManager : MonoBehaviour //There is only going to be one Tr
         foreach (Skill s in characterSkills.abilities)
         {
             GameObject bubble = Instantiate(skillPrefab, transform);
-            bubble.transform.position = new Vector3(((float)1 / i * 210 * j) + ((float)1 / i * 210 / 2) - 100, 0, 0);
+            bubble.transform.position = new Vector3(((float)1 / i * 210 * j) + ((float)1 / i * 210 / 2) - 100, 0, 0);//hardcoded values
             bubble.transform.name = s.name;
             bubble.GetComponentInChildren<SkillBubbleManager>().Skill = s;
             j++;
+        }
+    }
+
+    public void OnDisable()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
         }
     }
 }

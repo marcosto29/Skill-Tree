@@ -9,6 +9,7 @@ public class CharacterSelect : MonoBehaviour
     Dictionary<string, bool> characters;
     public GameObject buttonPrefab;
     public GameObject skillPrefab;
+    public GameObject backArrow;
     public SkillTreeManager tree;
     void Awake()
     {
@@ -25,8 +26,7 @@ public class CharacterSelect : MonoBehaviour
 
                 GameObject buttonSelecter = Instantiate(buttonPrefab, transform);
                 buttonSelecter.GetComponentInChildren<CharacterSelector>().character = chara.Key;
-                buttonSelecter.transform.name = "a";
-                buttonSelecter.transform.position = new Vector3(((float)1/i * 210 * j) + ((float)1/i * 210 / 2) - 100, 0, 0);
+                buttonSelecter.transform.position = new Vector3(((float)1/i * 210 * j) + ((float)1/i * 210 / 2) - 100, 0, 0);//hardcoded values
 
                 Button refe = buttonSelecter.GetComponentInChildren<Button>();
                 refe.image.sprite = sprite;

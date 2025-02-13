@@ -552,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6275996562096403244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -627,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   raycaster: {fileID: 4258748376714210022}
+  unlock: {fileID: 5548993334514719353}
 --- !u!1 &9062767768744876847
 GameObject:
   m_ObjectHideFlags: 0

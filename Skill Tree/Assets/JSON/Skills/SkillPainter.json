@@ -2,7 +2,7 @@
   "abilities": [
     {
       "name": "The Fundamentals of Art",
-      "unlocked": true,
+      "unlocked": false,
       "description": "- The Fundamentals of Art.\n\nAll an artist needs to know",
       "position": {
         "x": 0.0,
@@ -17,7 +17,7 @@
     },
     {
       "name": "RGB Buckets",
-      "unlocked": true,
+      "unlocked": false,
       "description": "- RGB Buckets.\n\nWet your brush on a palette of different colors to add an effect",
       "position": {
         "x": -50.0,
@@ -43,7 +43,7 @@
     },
     {
       "name": "Eraser",
-      "unlocked": true,
+      "unlocked": false,
       "description": "- Eraser.\n\nDelete your enemies",
       "position": {
         "x": 50.0,

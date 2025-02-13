@@ -25,7 +25,7 @@ public class SkillTreeManager : MonoBehaviour
     private void BuildTree(NTree<Skill> node, GameObject skillPrefab)
     {
         GameObject bubble = Instantiate(skillPrefab, transform);
-        bubble.GetComponent<SkillBubbleManager>().Skill = node.GetData();
+        bubble.GetComponent<SkillBubbleManager>().Skill = node;
         if (node.GetData().children.Count > 0)
         {
             foreach (string s in node.GetData().children)

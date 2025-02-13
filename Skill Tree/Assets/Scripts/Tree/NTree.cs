@@ -6,6 +6,7 @@ public delegate void TreeVisitor<T>(T nodeData);
 public class NTree<T>
 {
     private T data;
+    private NTree<T> father;
     private LinkedList<NTree<T>> children;
 
     public NTree(T data)
@@ -16,6 +17,7 @@ public class NTree<T>
 
     public void AddChild(NTree<T> data)
     {
+        data.father = this;
         children.AddFirst(data);
     }
 
@@ -25,6 +27,10 @@ public class NTree<T>
             if (--i == 0)
                 return n;
         return null;
+    }
+    public NTree<T> GetFather()
+    {
+        return father;
     }
     public void Traverse(NTree<T> node, TreeVisitor<T> visitor)
     {

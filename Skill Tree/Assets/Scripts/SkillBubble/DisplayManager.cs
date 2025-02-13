@@ -4,11 +4,19 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System.Linq;
 
-public class DisableGameObject : MonoBehaviour
+public class DisplayManager : MonoBehaviour
 {
     public GraphicRaycaster raycaster;
     EventSystem eventSystem;
+    [SerializeField] Button unlock;
 
+    private void OnEnable()
+    {
+        SkillBubbleManager bubbleManager = GetComponentInParent<SkillBubbleManager>();
+
+        if(bubbleManager.Skill.GetData().unlocked == true || (bubbleManager.Skill.GetData().father != "None" && bubbleManager.Skill.GetFather().GetData().unlocked == false)) unlock.gameObject.SetActive(false);
+        else unlock.gameObject.SetActive(true);
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Detect left mouse click

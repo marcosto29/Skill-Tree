@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 public class CharacterSkillData {
-    public Skill[] abilities;
+    public List<Skill> abilities;
 }

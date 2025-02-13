@@ -20,8 +20,10 @@ public class SkillBubbleManager : MonoBehaviour
         {
             skill = value;
 
-            displayedSkill.GetComponentInChildren<TextMeshProUGUI>().text = value.description;//setting up the description text
-            string name = GetComponentInParent<SkillTreeManager>().characterName;
+            transform.position = value.position;
+            transform.name = value.name;
+
+            displayedSkill.GetComponentInChildren<TextMeshProUGUI>().text = value.description;//setting up the description text         
             display.image.sprite = Resources.Load<Sprite>("Sprites/" + GetComponentInParent<SkillTreeManager>().characterName + "/" + value.name);
             display.image.SetNativeSize();
         }

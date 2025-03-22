@@ -3,22 +3,23 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class CharacterSelector : MonoBehaviour
+public class CharacterSelector : MonoBehaviour//Button to activate the Tree
 {
-    public string character;
-    // Start is called before the first frame update
+    public string character;//character whose tree is gonna be builded
     void Start()
     {
+        Button button = GetComponent<Button>();
+        button.image.sprite = Resources.Load<Sprite>("Sprites/" + character + "/" + character);//load the sprite on the button
+        button.image.SetNativeSize();
+
         GetComponent<Button>().onClick.AddListener(SelectCharacter);
     }
-    
+
     private void SelectCharacter()
     {
-        SkillTreeManager tree = GetComponentInParent<CharacterSelect>().tree;
-        tree.gameObject.SetActive(true);
-        tree.characterName = character;
-        tree.CreateTree(GetComponentInParent<CharacterSelect>().skillPrefab);
-        GetComponentInParent<CharacterSelect>().backArrow.SetActive(true);
-        transform.root.gameObject.SetActive(false);
+        //call the Tree on the Scene and build it
+        Select.Instance.DestroySelect();      
+        TreeManager.Instance.characterName = character;//save the name on the variable to be accesible for other objects
+        TreeManager.Instance.CreateTree();//create the tree with the name
     }
 }

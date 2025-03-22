@@ -5,36 +5,37 @@ using Newtonsoft.Json.Linq;
 
 public static class JsonManager
 {
-    public static void JsonWriter(CharacterSkillData A, string name)
+    public static void JsonWriter<T>(T data, string filePath)//write a whole JSON from scratch
     {
-        var json = JsonConvert.SerializeObject(A);
-        File.WriteAllText(Application.dataPath + "/Skill" + name + ".json", json);
+        var json = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings//to avoid loops given a certain data structure such as tree
+        {
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+        });
+        File.WriteAllText(Application.dataPath + "/JSON/" + filePath + ".json", json);
     }
 
-    public static T JsonReader<T>(string filePath)
+    public static T JsonReader<T>(string filePath)//Read on a JSON
     {
         var json = File.ReadAllText(Application.dataPath + "/JSON/" + filePath + ".json");
         return JsonConvert.DeserializeObject<T>(json);
     }
-    public static void Unlock(string character, string skill)
+
+    public static void Unlock(string skill)//Unlock the skill
     {
-        string json = File.ReadAllText(Application.dataPath + "/JSON/Skills/Skill" + character + ".json");
-        JObject jsonObject = JObject.Parse(json);
+        NTree<CharacterSkillData> jsonObj = JsonReader<NTree<CharacterSkillData>>("Skills/Skill" + TreeManager.Instance.characterName);
+        UnlockSkill(jsonObj, skill);
+        JsonWriter(jsonObj, "Skills/Skill" + TreeManager.Instance.characterName);
+    }
 
-
-        JArray abilities = (JArray)jsonObject["abilities"];
-
-        foreach (JObject s in abilities)
+    private static void UnlockSkill(NTree<CharacterSkillData> tree, string skill)
+    {
+        if (tree.info.name == skill)
         {
-            if (s["name"].ToString() == skill)
-            {
-                s["unlocked"] = true;
-                break;
-            }
+            tree.info.unlocked = true;
+            return;
         }
 
-        string updatedJson = jsonObject.ToString();
-
-        File.WriteAllText(Application.dataPath + "/JSON/Skills/Skill" + character + ".json", updatedJson);
+        foreach (NTree<CharacterSkillData> c in tree.children)
+            UnlockSkill(c, skill);
     }
 }

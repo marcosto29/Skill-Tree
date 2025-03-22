@@ -1,23 +1,42 @@
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
 using UnityEngine.UI;
-using System.Linq;
+using TMPro;
 
 public class DisplayManager : MonoBehaviour
 {
-    public GraphicRaycaster raycaster;
+    GraphicRaycaster raycaster;
     EventSystem eventSystem;
-    [SerializeField] Button unlock;
+    public TextMeshProUGUI descriptionText;
+    public GameObject unlockButton;
+    public Image backgroundImage;
+
+    public void Start()
+    {
+        raycaster = GetComponentInParent<GraphicRaycaster>();
+    }
+    public void Build(string text, bool unlocked)
+    {
+        //Build the displayed bubble skill with the info from the bubble manager
+        descriptionText.text = text;//putting the description text from the JSON
+        
+        backgroundImage.sprite = Resources.Load<Sprite>("Sprites/" + TreeManager.Instance.characterName + "/Background");//loading the background image
+        backgroundImage.SetNativeSize();
+
+        unlockButton.GetComponent<UnlockManager>().unlocked = unlocked;//passing to the unlock button the information needed
+    }
 
     private void OnEnable()
     {
-        SkillBubbleManager bubbleManager = GetComponentInParent<SkillBubbleManager>();
-
-        if(bubbleManager.Skill.GetData().unlocked == true || (bubbleManager.Skill.GetData().father != "None" && bubbleManager.Skill.GetFather().GetData().unlocked == false)) unlock.gameObject.SetActive(false);
-        else unlock.gameObject.SetActive(true);
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);//active each child individually since it can be deactivated by default
+        }
     }
-    void Update()
+
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0)) // Detect left mouse click
         {

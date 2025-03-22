@@ -1,84 +1,87 @@
 {
-  "abilities": [
+  "father": null,
+  "children": [
     {
-      "name": "The Fundamentals of Art",
-      "unlocked": false,
-      "description": "- The Fundamentals of Art.\n\nAll an artist needs to know",
-      "position": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-      },
+      "father": null,
       "children": [
-        "RGB Buckets",
-        "Eraser"
+        {
+          "father": null,
+          "children": [],
+          "info": {
+            "name": "Renewed Papyro",
+            "unlocked": false,
+            "description": "- Renewed Papyro.\n\nThe only way your art can truly improve",
+            "position": {
+              "x": 125.0,
+              "y": -200.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "father": null,
+          "children": [],
+          "info": {
+            "name": "Shading",
+            "unlocked": false,
+            "description": "- Shading.\n\nGive shadows to your foes",
+            "position": {
+              "x": 50.0,
+              "y": -200.0,
+              "z": 0.0
+            }
+          }
+        }
       ],
-      "father": "None"
+      "info": {
+        "name": "Eraser",
+        "unlocked": false,
+        "description": "- Eraser.\n\nDelete your enemies",
+        "position": {
+          "x": 100.0,
+          "y": -100.0,
+          "z": 0.0
+        }
+      }
     },
     {
-      "name": "RGB Buckets",
-      "unlocked": false,
-      "description": "- RGB Buckets.\n\nWet your brush on a palette of different colors to add an effect",
-      "position": {
-        "x": -50.0,
-        "y": -50.0,
-        "z": 0.0
-      },
+      "father": null,
       "children": [
-        "Secondary Colors"
+        {
+          "father": null,
+          "children": [],
+          "info": {
+            "name": "Secondary Colors",
+            "unlocked": false,
+            "description": "- Secondary Colors.\n\nEven more effects on the enemies",
+            "position": {
+              "x": -100.0,
+              "y": -200.0,
+              "z": 0.0
+            }
+          }
+        }
       ],
-      "father": "The Fundamentals of Art"
-    },
-    {
-      "name": "Secondary Colors",
-      "unlocked": false,
-      "description": "- Secondary Colors.\n\nEven more effects on the enemies",
-      "position": {
-        "x": -50.0,
-        "y": -100.0,
-        "z": 0.0
-      },
-      "children": [],
-      "father": "RGB Buckets"
-    },
-    {
-      "name": "Eraser",
-      "unlocked": false,
-      "description": "- Eraser.\n\nDelete your enemies",
-      "position": {
-        "x": 50.0,
-        "y": -50.0,
-        "z": 0.0
-      },
-      "children": [
-        "Shading",
-        "Renewed Papyro"
-      ],
-      "father": "The Fundamentals of Art"
-    },
-    {
-      "name": "Shading",
-      "unlocked": false,
-      "description": "- Shading.\n\nGive shadows to your foes",
-      "position": {
-        "x": 25.0,
-        "y": -100.0,
-        "z": 0.0
-      },
-      "children": [],
-      "father": "Eraser"
-    },
-    {
-      "name": "Renewed Papyro",
-      "unlocked": false,
-      "description": "- Renewed Papyro.\n\nThe only way your art can truly improve",
-      "position": {
-        "x": 75.0,
-        "y": -100.0,
-        "z": 0.0
-      },
-      "children": [],
-      "father": "Eraser"
+      "info": {
+        "name": "RGB Buckets",
+        "unlocked": false,
+        "description": "- RGB Buckets.\n\nWet your brush on a palette of different colors to add an effect",
+        "position": {
+          "x": -100.0,
+          "y": -100.0,
+          "z": 0.0
+        }
+      }
     }
-  ]
+  ],
+  "info": {
+    "name": "The Fundamentals of Art",
+    "unlocked": false,
+    "description": "- The Fundamentals of Art.\n\nAll an artist needs to know",
+    "position": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  }
 }

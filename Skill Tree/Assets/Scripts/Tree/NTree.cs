@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public delegate void TreeVisitor<T>(T nodeData);
+[System.Serializable]
 public class NTree<T>
 {
-    private T data;
-    private NTree<T> father;
-    private LinkedList<NTree<T>> children;
+    public NTree<T> father;//when serializing the variables have to be public
+    public LinkedList<NTree<T>> children;
+    public T info;
 
     public NTree(T data)
     {
-        this.data = data;
+        info = data;
         children = new LinkedList<NTree<T>>();
     }
 
@@ -32,15 +32,9 @@ public class NTree<T>
     {
         return father;
     }
-    public void Traverse(NTree<T> node, TreeVisitor<T> visitor)
+    public void Traverse(NTree<T> node)
     {
-        visitor(node.data);
         foreach (NTree<T> kid in node.children)
-            Traverse(kid, visitor);
-    }
-
-    public T GetData()
-    {
-        return data;
+            Traverse(kid);
     }
 }

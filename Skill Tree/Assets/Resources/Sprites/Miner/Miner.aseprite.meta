@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 791fbe20169af0a479a9655109adcb96
+guid: e990f1d8e0569dd43956fd0cee032270
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -120,7 +120,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Forgotten
+  - name: Miner
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -131,7 +131,7 @@ ScriptedImporter:
       y: 4
       width: 51
       height: 40
-    spriteID: d66a8cbbdb7e46d4d863d5d86fb29bae
+    spriteID: 6907f628303888b44950d0f0c930e223
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,13 +143,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1603820528
-    name: Forgotten
+    guid: -649862815
+    name: Miner
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Forgotten
+    - name: Miner
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -157,7 +157,7 @@ ScriptedImporter:
         y: 0
         width: 51
         height: 40
-      spriteId: d66a8cbbdb7e46d4d863d5d86fb29bae
+      spriteId: 6907f628303888b44950d0f0c930e223
     linkedCells: []
     parentIndex: -1
   platformSettings:

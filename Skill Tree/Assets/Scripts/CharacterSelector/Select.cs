@@ -22,6 +22,7 @@ public class Select : MonoBehaviour
 
     public void CreateSelect()
     {
+        Camera.main.transform.position = new Vector3(0, 0, Camera.main.transform.position.z);
         positon = -100;
         foreach (KeyValuePair<string, bool> s in characters)
         {

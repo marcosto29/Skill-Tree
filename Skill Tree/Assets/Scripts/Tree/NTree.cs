@@ -32,7 +32,7 @@ public class NTree<T>
     {
         return father;
     }
-    public void Traverse(NTree<T> node)
+    public void Traverse(NTree<T> node)//template to traverse through a tree using recusion
     {
         foreach (NTree<T> kid in node.children)
             Traverse(kid);

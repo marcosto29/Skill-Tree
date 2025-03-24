@@ -2,53 +2,8 @@
   "father": null,
   "children": [
     {
-      "father": null,
       "children": [
         {
-          "father": null,
-          "children": [],
-          "info": {
-            "name": "Renewed Papyro",
-            "unlocked": false,
-            "description": "- Renewed Papyro.\n\nThe only way your art can truly improve",
-            "position": {
-              "x": 125.0,
-              "y": -200.0,
-              "z": 0.0
-            }
-          }
-        },
-        {
-          "father": null,
-          "children": [],
-          "info": {
-            "name": "Shading",
-            "unlocked": false,
-            "description": "- Shading.\n\nGive shadows to your foes",
-            "position": {
-              "x": 50.0,
-              "y": -200.0,
-              "z": 0.0
-            }
-          }
-        }
-      ],
-      "info": {
-        "name": "Eraser",
-        "unlocked": false,
-        "description": "- Eraser.\n\nDelete your enemies",
-        "position": {
-          "x": 100.0,
-          "y": -100.0,
-          "z": 0.0
-        }
-      }
-    },
-    {
-      "father": null,
-      "children": [
-        {
-          "father": null,
           "children": [],
           "info": {
             "name": "Secondary Colors",
@@ -68,6 +23,46 @@
         "description": "- RGB Buckets.\n\nWet your brush on a palette of different colors to add an effect",
         "position": {
           "x": -100.0,
+          "y": -100.0,
+          "z": 0.0
+        }
+      }
+    },
+    {
+      "children": [
+        {
+          "children": [],
+          "info": {
+            "name": "Renewed Papyro",
+            "unlocked": false,
+            "description": "- Renewed Papyro.\n\nThe only way your art can truly improve",
+            "position": {
+              "x": 150.0,
+              "y": -200.0,
+              "z": 0.0
+            }
+          }
+        },
+        {
+          "children": [],
+          "info": {
+            "name": "Shading",
+            "unlocked": false,
+            "description": "- Shading.\n\nGive shadows to your foes",
+            "position": {
+              "x": 50.0,
+              "y": -200.0,
+              "z": 0.0
+            }
+          }
+        }
+      ],
+      "info": {
+        "name": "Eraser",
+        "unlocked": false,
+        "description": "- Eraser.\n\nDelete your enemies",
+        "position": {
+          "x": 100.0,
           "y": -100.0,
           "z": 0.0
         }

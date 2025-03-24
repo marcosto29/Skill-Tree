@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System;
 
 public static class JsonManager
 {
@@ -20,22 +20,10 @@ public static class JsonManager
         return JsonConvert.DeserializeObject<T>(json);
     }
 
-    public static void Unlock(string skill)//Unlock the skill
+    public static void Update<T>(Action<T, string> fun, string key)//Unlock the skill
     {
-        NTree<CharacterSkillData> jsonObj = JsonReader<NTree<CharacterSkillData>>("Skills/Skill" + TreeManager.Instance.characterName);
-        UnlockSkill(jsonObj, skill);
+        T jsonObj = JsonReader<T>("Skills/Skill" + TreeManager.Instance.characterName);
+        fun(jsonObj, key);
         JsonWriter(jsonObj, "Skills/Skill" + TreeManager.Instance.characterName);
-    }
-
-    private static void UnlockSkill(NTree<CharacterSkillData> tree, string skill)
-    {
-        if (tree.info.name == skill)
-        {
-            tree.info.unlocked = true;
-            return;
-        }
-
-        foreach (NTree<CharacterSkillData> c in tree.children)
-            UnlockSkill(c, skill);
     }
 }

@@ -26,7 +26,19 @@ public class UnlockManager : MonoBehaviour
     private void UnlockSkill()
     {
         unlocked = true;
-        JsonManager.Unlock(GetComponentInParent<BubbleManager>().Skill.name);//Unlock the skill on the JSON
+        JsonManager.Update<NTree<CharacterSkillData>>(UnlockSkillBubble, GetComponentInParent<BubbleManager>().Skill.name);//Unlock the skill on the JSON
         gameObject.SetActive(false);//when the skill is unlocked rewrite the JSON to Update the info and deactivate the button
+    }
+
+    public static void UnlockSkillBubble(NTree<CharacterSkillData> tree, string key)
+    {
+        if (tree.info.name == key)
+        {
+            tree.info.unlocked = true;
+            return;
+        }
+
+        foreach (NTree<CharacterSkillData> c in tree.children)
+            UnlockSkillBubble(c, key);
     }
 }

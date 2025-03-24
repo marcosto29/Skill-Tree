@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneChanger.unity
     guid: 710b9121d74439d4dab35854d5ab1f29
   - enabled: 1
-    path: Assets/Scenes/TreeSkillOld.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/TreeSkill.unity
+    guid: 262e1dd17e4d7f445aecf43313c4979f
   m_configObjects: {}

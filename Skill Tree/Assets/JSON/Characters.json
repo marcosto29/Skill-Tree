@@ -1,8 +1,7 @@
 {
     //If the characters are unlocked (true) their icons will appear on screen and can be interacted with
     "Painter": true, //Display order
-    "Judas": true,
-    "Isaac": true,
-    "Magdalene": true,
-    "Forgotten" :  true
+    "Miner": true,
+    "Outlaw": false,
+    "T-Mech": false
 }

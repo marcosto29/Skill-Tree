@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class UnlockManager : MonoBehaviour
 {
-    public bool unlocked;
+    //since the unlock parameter changes through execution there cant be a variable that holds the value 
+    //all the skill needs to be taken when needed
+    NTree<CharacterSkillData> node;
 
-    // Start is called before the first frame update
     private void OnEnable()
     {
-        if (unlocked) gameObject.SetActive(false);//when it activates detects if the skill is unlocked to not activate it
+        node = GetComponentInParent<BubbleManager>().Skill;//every time the button is activated it checks the father
+        if (node.info.unlocked || (node.father != null && node.father.info.unlocked == false)) 
+            gameObject.SetActive(false);
     }
 
     void Awake()
@@ -25,8 +28,8 @@ public class UnlockManager : MonoBehaviour
 
     private void UnlockSkill()
     {
-        unlocked = true;
-        JsonManager.Update<NTree<CharacterSkillData>>(UnlockSkillBubble, GetComponentInParent<BubbleManager>().Skill.name);//Unlock the skill on the JSON
+        node.info.unlocked = true;
+        JsonManager.Update<NTree<CharacterSkillData>>(UnlockSkillBubble, node.info.name);//Unlock the skill on the JSON
         gameObject.SetActive(false);//when the skill is unlocked rewrite the JSON to Update the info and deactivate the button
     }
 

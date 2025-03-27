@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SceneChanger.unity
+    path: Assets/Scenes/Central.unity
     guid: 710b9121d74439d4dab35854d5ab1f29
   - enabled: 1
     path: Assets/Scenes/TreeSkill.unity

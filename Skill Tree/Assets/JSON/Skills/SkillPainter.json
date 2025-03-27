@@ -1,5 +1,4 @@
 {
-  "father": null,
   "children": [
     {
       "children": [
@@ -59,7 +58,7 @@
       ],
       "info": {
         "name": "Eraser",
-        "unlocked": false,
+        "unlocked": true,
         "description": "- Eraser.\n\nDelete your enemies",
         "position": {
           "x": 100.0,
@@ -70,9 +69,9 @@
     }
   ],
   "info": {
-    "name": "The Fundamentals of Art",
-    "unlocked": false,
-    "description": "- The Fundamentals of Art.\n\nAll an artist needs to know",
+    "name": "The Fundamentals Of Art",
+    "unlocked": true,
+    "description": "-The Fundamentals of Art.\n\nAll an artist needs to know",
     "position": {
       "x": 0.0,
       "y": 0.0,

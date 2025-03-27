@@ -7,6 +7,7 @@ public class Select : MonoBehaviour
     Dictionary<string, bool> characters; //A Dictionary to load the characters and know which ones are unlocked and which ones arent
     [SerializeField] GameObject selectorPrefab; //prefab of the selector GameObject
     float positon;
+    public BackButton back;
     private void Awake()
     {
         if (Instance != null && Instance != this)//since instance is static is unique

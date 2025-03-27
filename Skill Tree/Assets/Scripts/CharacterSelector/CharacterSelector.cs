@@ -21,5 +21,6 @@ public class CharacterSelector : MonoBehaviour//Button to activate the Tree
         Select.Instance.DestroySelect();      
         TreeManager.Instance.characterName = character;//save the name on the variable to be accesible for other objects
         TreeManager.Instance.CreateTree();//create the tree with the name
+        GetComponentInParent<Select>().back.BackTree();
     }
 }

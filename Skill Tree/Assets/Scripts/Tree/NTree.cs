@@ -1,14 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using Newtonsoft.Json;
 
-[System.Serializable]
 public class NTree<T>
 {
-    public NTree<T> father;//when serializing the variables have to be public
-    public LinkedList<NTree<T>> children;
+
+    public LinkedList<NTree<T>> children; //when serializing the variables have to be public
     public T info;
 
+    [JsonIgnore]
+    public NTree<T> father;//ignore the father to prevent cyclics problem when transgorming to JSON
+    
     public NTree(T data)
     {
         info = data;

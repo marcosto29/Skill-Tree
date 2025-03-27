@@ -9,23 +9,20 @@ public class DisplayManager : MonoBehaviour
 {
     GraphicRaycaster raycaster;
     EventSystem eventSystem;
-    public TextMeshProUGUI descriptionText;
-    public GameObject unlockButton;
-    public Image backgroundImage;
+    [SerializeField] TextMeshProUGUI descriptionText;
+    [SerializeField] Image backgroundImage;
 
     public void Start()
     {
         raycaster = GetComponentInParent<GraphicRaycaster>();
     }
-    public void Build(string text, bool unlocked)
+    public void Build(string text)
     {
         //Build the displayed bubble skill with the info from the bubble manager
         descriptionText.text = text;//putting the description text from the JSON
         
         backgroundImage.sprite = Resources.Load<Sprite>("Sprites/" + TreeManager.Instance.characterName + "/Background");//loading the background image
         backgroundImage.SetNativeSize();
-
-        unlockButton.GetComponent<UnlockManager>().unlocked = unlocked;//passing to the unlock button the information needed
     }
 
     private void OnEnable()

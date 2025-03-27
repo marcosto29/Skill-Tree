@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class SkillTreeSceneActivator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -19,7 +13,7 @@ public class SkillTreeSceneActivator : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
-                if (hit.transform == this.transform) SceneChanger.ChangeScene("TreeSkill");
+                if (hit.transform == this.transform) SceneManager.ChangeScene("TreeSkill");
             }
         }
     }

@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[System.Serializable]
 public class CharacterSkillData {
     public string name;
     public bool unlocked;
@@ -17,7 +16,6 @@ public class CharacterSkillData {
 
 //personal vector3 class to manage better the information of the position
 //since the native one on unity hava a lot of useless (at the moment) information
-[System.Serializable]
 public class SerializableVector3
 {
     public float x;

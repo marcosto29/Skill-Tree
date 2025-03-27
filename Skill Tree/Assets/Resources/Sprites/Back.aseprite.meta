@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e990f1d8e0569dd43956fd0cee032270
+guid: 014b251ecc53eab47a366544db0f25b8
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -120,7 +120,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Miner
+  - name: Back
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -129,9 +129,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 51
-      height: 40
-    spriteID: 6907f628303888b44950d0f0c930e223
+      width: 150
+      height: 50
+    spriteID: 59feea3e5b97a614cbc26d9556c7086a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -143,21 +143,21 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -649862815
-    name: Miner
+    guid: -1516408785
+    name: Back
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Miner
+    - name: Back
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
         y: 0
-        width: 51
-        height: 40
-      spriteId: 6907f628303888b44950d0f0c930e223
+        width: 150
+        height: 50
+      spriteId: 59feea3e5b97a614cbc26d9556c7086a
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -175,5 +175,5 @@ ScriptedImporter:
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 51, y: 40}
-  previousTextureSize: {x: 64, y: 64}
+  canvasSize: {x: 150, y: 50}
+  previousTextureSize: {x: 256, y: 64}

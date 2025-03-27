@@ -6,7 +6,7 @@ public class TreeManager : MonoBehaviour
 {
     public static TreeManager Instance { get; private set; }//Singleton because there is only one tree
     [SerializeField] GameObject bubblePrefab;
-    [SerializeField] ActivateSelector backArrow;
+    [SerializeField] BackButton backArrow;
     public string characterName;
     // Start is called before the first frame update
     void Start()
@@ -32,7 +32,7 @@ public class TreeManager : MonoBehaviour
     {
         //Create Bubble through the prefab
         GameObject bubble = Instantiate(bubblePrefab, transform);
-        bubble.GetComponent<BubbleManager>().Skill = node.info;
+        bubble.GetComponent<BubbleManager>().Skill = node;
         bubble.name = node.info.name;
 
         if (node.father != null)

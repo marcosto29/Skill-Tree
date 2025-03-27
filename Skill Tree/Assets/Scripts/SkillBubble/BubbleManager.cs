@@ -6,14 +6,14 @@ using TMPro;
 
 public class BubbleManager : MonoBehaviour
 {
-    CharacterSkillData skill;
+    NTree<CharacterSkillData> skill;
 
     private void Awake()
     {
         GetComponent<Button>().onClick.AddListener(ActivateSkill);
     }
 
-    public CharacterSkillData Skill
+    public NTree<CharacterSkillData> Skill
     {
         get
         {
@@ -21,11 +21,11 @@ public class BubbleManager : MonoBehaviour
         }
         set
         {
-            transform.position = value.position;
-            displayedSkill.GetComponent<DisplayManager>().Build(value.description, value.unlocked);//pass the information to the manager
+            transform.position = value.info.position;
+            displayedSkill.GetComponent<DisplayManager>().Build(value.info.description);//pass the information to the manager
 
             Image skillImage = GetComponent<Image>();//Load the image of the skill from Resources
-            skillImage.sprite = Resources.Load<Sprite>("Sprites/" + TreeManager.Instance.characterName + "/" + value.name);
+            skillImage.sprite = Resources.Load<Sprite>("Sprites/" + TreeManager.Instance.characterName + "/" + value.info.name);
             skillImage.SetNativeSize();
             skill = value;
         }
